@@ -1,59 +1,42 @@
 var modal = document.getElementById("createModal");
-
-// Get the button that opens the modal
+var modal2 = document.getElementById("viewContact");
 var btn = document.getElementById("createBtn");
+var close1 = document.getElementsByClassName("close")[0];
+var close2 = document.getElementsByClassName("close")[1];
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// Open and close modals
 btn.onclick = function() {
     modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+close1.onclick = function() {
     modal.style.display = "none";
+    window.location.href = "index.php";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+close2.onclick = function() {
+    modal.style.display = "none";
+    window.location.replace("index.php");
+}
+
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == modal2) {
         modal.style.display = "none";
+        modal2.style.display = "none";
+        window.location.replace("index.php");
     }
 }
 
-
-
-var viewModal = document.getElementById("viewContact");
-
-// Get the button that opens the modal
-var viewBtn = document.getElementById("viewModal");
-
-// Get the <span> element that closes the modal
-var viewSpan = document.getElementsByClassName("close")[1];
-
-// When the user clicks the button, open the modal 
-viewBtn.onclick = function() {
-    viewModal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-viewSpan.onclick = function() {
-    viewModal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        viewModal.style.display = "none";
-    }
-}
-
-
+// display file name
 const file = document.querySelector('#file');
 file.addEventListener('change', (e) => {
     const [file] = e.target.files;
-    const { name: fileName } = file;
-    document.querySelector('.file-name').textContent = fileName;
+    document.querySelector('#file-name').textContent = file.name;
+});
+
+const file2 = document.querySelector('#file2');
+file2.addEventListener('change', (e) => {
+    const [file] = e.target.files;
+    document.querySelector('#file-name-2').textContent = file.name;
 });
