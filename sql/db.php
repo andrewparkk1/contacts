@@ -118,6 +118,7 @@ function update($table, $id, $data) {
     return $stmt->affected_rows;
 }
 
+
 function delete($table, $id) {
     global $conn;
     $sql = "DELETE FROM $table WHERE id=?";

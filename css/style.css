@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.file-input label {
+  display: block;
+  position: relative;
+  width: fit;
+  height: fit;
+  padding: 3px 3.2rem;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.file-name {
+  position: absolute;
+  bottom: -45px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #555;
+}

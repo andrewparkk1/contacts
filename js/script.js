@@ -49,3 +49,11 @@ window.onclick = function(event) {
         viewModal.style.display = "none";
     }
 }
+
+
+const file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    const [file] = e.target.files;
+    const { name: fileName } = file;
+    document.querySelector('.file-name').textContent = fileName;
+});
