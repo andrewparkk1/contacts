@@ -16,5 +16,4 @@ function validateContact($contact, $isNewContact) {
     return $errors;
 }
 
-
 ?>
